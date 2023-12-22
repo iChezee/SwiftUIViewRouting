@@ -39,7 +39,7 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     }
     
     public var activeState: State
-    private var previousState: State
+    public var previousState: State
     private var builder: Builder
     
     public func refresh() {
