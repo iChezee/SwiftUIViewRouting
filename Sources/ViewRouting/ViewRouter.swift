@@ -58,6 +58,13 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
         }
     }
     
+    public func goBack() {
+        activeState = previousState
+        withAnimation(builder.animation(to: activeState, from: previousState)) {
+            objectWillChange.send()
+        }
+    }
+    
     public var view: some View {
         builder.build(state: activeState)
             .transition(builder.transition(to: activeState, from: previousState))
