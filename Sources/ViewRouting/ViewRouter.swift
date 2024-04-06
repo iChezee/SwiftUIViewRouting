@@ -31,7 +31,7 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     private let initial: State
     
     public init(for builder: Builder, initial state: State) {
-        self.builder = Builder
+        self.builder = builder
         self.initial = state
         self.activeState = state
         self.previousState = state
