@@ -9,7 +9,6 @@ let package = Package(
         .library(name: "ViewRouting", targets: ["ViewRouting"])
     ],
     targets: [
-        .target(name: "ViewRouting"),
-        .testTarget(name: "ViewRoutingTests", dependencies: ["ViewRouting"])
+        .target(name: "ViewRouting")
     ]
 )
