@@ -41,7 +41,7 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     
     public var activeState: State
     public var previousState: State
-    private var builder: Builder
+    public var builder: Builder
     
     public func refresh() {
         self.activeState = initial
