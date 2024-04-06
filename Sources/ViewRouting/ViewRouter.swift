@@ -5,7 +5,6 @@ public protocol ViewRouterBuilder {
     associatedtype RouterView: View
     associatedtype State: ViewState
     
-    init()
     func build(state: State) -> Self.RouterView
     func animation(to: State, from: State) -> Animation?
     func transition(to: State, from: State) -> AnyTransition
