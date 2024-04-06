@@ -30,8 +30,8 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     public typealias State = Builder.State
     private let initial: State
     
-    public init(for builder: Builder.Type, initial state: State) {
-        self.builder = Builder()
+    public init(for builder: Builder, initial state: State) {
+        self.builder = Builder
         self.initial = state
         self.activeState = state
         self.previousState = state
