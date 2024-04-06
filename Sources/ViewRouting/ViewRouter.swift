@@ -38,6 +38,13 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
         self.activeState = state
         self.previousState = state
     }
+
+    public init(for builder: Builder, initial state: State) {
+        self.builder = builder
+        self.initial = state
+        self.activeState = state
+        self.previousState = state
+    }
     
     public var activeState: State
     public var previousState: State
