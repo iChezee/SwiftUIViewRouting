@@ -53,7 +53,8 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     public func refresh() {
         self.activeState = initial
         self.previousState = initial
-        withAnimation(builder.animation(to: activeState, from: previousState)) {
+        let animation = builder.animation(to: activeState, from: previousState)
+        withAnimation(animation) {
             objectWillChange.send()
         }
     }
@@ -61,14 +62,16 @@ public class ViewRouter<Builder>: ViewRouting, ObservableObject where Builder: V
     public func route(to state: State) {
         previousState = activeState
         activeState = state
-        withAnimation(builder.animation(to: activeState, from: previousState)) {
+        let animation = builder.animation(to: activeState, from: previousState)
+        withAnimation(animation) {
             objectWillChange.send()
         }
     }
     
     public func goBack() {
         activeState = previousState
-        withAnimation(builder.animation(to: activeState, from: previousState)) {
+        let animation = builder.animation(to: activeState, from: previousState)
+        withAnimation(animation) {
             objectWillChange.send()
         }
     }
